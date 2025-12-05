@@ -45,7 +45,7 @@ jobs:
       - name: build wheels
         uses: PyO3/maturin-action@v1
         with:
-          args: --release -Z build-std --target x86_64-win7-windows-gnu --out dist --interpreter ${{ matrix.interpreter || '3.9 3.10 3.11 3.12 3.13 3.14 3.14t pypy3.10 pypy3.11' }}
+          args: --release -Z build-std --target x86_64-win7-windows-msvc --out dist --interpreter ${{ matrix.interpreter || '3.9 3.10 3.11 3.12 3.13 3.14 3.14t pypy3.10 pypy3.11' }}
           rust-toolchain: nightly
           rustup-components: rust-src
           docker-options: -e CI
